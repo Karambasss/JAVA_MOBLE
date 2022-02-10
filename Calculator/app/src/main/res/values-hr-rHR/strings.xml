@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Kalkulator</string>
+    <string name="calc_txt">Pozdravlja vas aplikacija Kalkulator!</string>
+    <string name="my_a">Unesite x:</string>
+    <string name="my_b">Unesite y:</string>
+    <string name="result">Vaš odgovor:</string>
+    <string name="btn_plus">+</string>
+    <string name="btn_minus">-</string>
+    <string name="btn_delim">/</string>
+    <string name="btn_umnozh">*</string>
+</resources>

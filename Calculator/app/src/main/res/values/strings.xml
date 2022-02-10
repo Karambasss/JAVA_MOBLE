@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Калькулятор</string>
+    <string name="calc_txt">Вас приветствует приложение калькулятор!</string>
+    <string name="my_a">Введите x:</string>
+    <string name="my_b">Введите y:</string>
+    <string name="result">Ваш ответ:</string>
+    <string name="btn_plus">+</string>
+    <string name="btn_minus">-</string>
+    <string name="btn_delim">/</string>
+    <string name="btn_umnozh">*</string>
+</resources>
