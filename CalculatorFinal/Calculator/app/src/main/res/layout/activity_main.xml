@@ -13,15 +13,14 @@
         android:fontFamily="@font/montserrat"
         android:text="@string/calc_txt"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintVertical_bias="0.001" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="286dp"
-        android:layout_height="576dp"
+        android:layout_width="407dp"
+        android:layout_height="664dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -33,11 +32,12 @@
             android:id="@+id/for_a"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="68dp"
             android:text="@string/my_a"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <TextView
             android:id="@+id/for_b"
@@ -49,56 +49,67 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="148dp"
-            android:onClick="clickPlus"
-            android:text="@string/btn_plus"
+        <ImageButton
+            android:id="@+id/btn_plus"
+            android:layout_width="75dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="140dp"
+            android:onClick="onClick"
+            android:src="@drawable/img"
             app:layout_constraintEnd_toStartOf="@+id/for_b"
+            app:layout_constraintHorizontal_bias="0.469"
             app:layout_constraintStart_toEndOf="@+id/for_a"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:id="@+id/btn_minus"
+            android:layout_width="75dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="8dp"
+            android:onClick="onClick"
+            android:src="@drawable/img_1"
             android:text="@string/btn_minus"
-            android:onClick="clickMinus"
-            app:layout_constraintEnd_toEndOf="@+id/button"
-            app:layout_constraintStart_toStartOf="@+id/button"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
+            app:layout_constraintEnd_toEndOf="@+id/btn_plus"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_plus"
+            app:layout_constraintTop_toBottomOf="@+id/btn_plus" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_delim"
-            android:onClick="clickDelim"
-            app:layout_constraintEnd_toEndOf="@+id/button2"
-            app:layout_constraintStart_toStartOf="@+id/button2"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
+        <ImageButton
+            android:id="@+id/btn_del"
+            android:layout_width="75dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="8dp"
+            android:onClick="onClick"
+            android:src="@drawable/del"
+            android:text="fghfdgddfgdfg"
+            app:layout_constraintEnd_toEndOf="@+id/btn_minus"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_minus"
+            app:layout_constraintTop_toBottomOf="@+id/btn_minus" />
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:id="@+id/btn_umn"
+            android:layout_width="75dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="4dp"
+            android:onClick="onClick"
+            android:src="@drawable/img_3"
             android:text="@string/btn_umnozh"
-            android:onClick="clickUmnozh"
-            app:layout_constraintEnd_toEndOf="@+id/button3"
-            app:layout_constraintStart_toStartOf="@+id/button3"
-            app:layout_constraintTop_toBottomOf="@+id/button3" />
+            app:layout_constraintEnd_toEndOf="@+id/btn_del"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="@+id/btn_del"
+            app:layout_constraintTop_toBottomOf="@+id/btn_del" />
 
         <TextView
             android:id="@+id/resultFld"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="40dp"
             android:text="@string/result"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button4" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_umn" />
 
         <EditText
             android:id="@+id/editTextNumber"
@@ -110,7 +121,8 @@
             android:inputType="number"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/for_a"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/editTextNumber2"
@@ -122,7 +134,24 @@
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/for_b"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+            android:autofillHints="" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="72dp"
+            android:layout_height="83dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_hot_deal" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_hot_deal" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

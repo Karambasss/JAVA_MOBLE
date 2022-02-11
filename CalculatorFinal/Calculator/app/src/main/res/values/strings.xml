@@ -8,4 +8,7 @@
     <string name="btn_minus">-</string>
     <string name="btn_delim">/</string>
     <string name="btn_umnozh">*</string>
+    <string name="error_msg">Вы ошиблись!</string>
+    <string name="error_div_msg">Деление на ноль!</string>
+    <string name="error_default">Неожиданное значение!</string>
 </resources>
