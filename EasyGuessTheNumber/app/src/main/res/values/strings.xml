@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">GuessTheNumber</string>
+    <string name="info_to_usr">Угадаете число?</string>
+    <string name="lvl_1_xtx">1 уровень</string>
+    <string name="lvl_2_txt">2 уровень</string>
+    <string name="lvl_3_txt">3 уровень</string>
+    <string name="lvl_4_txt">4 уровень</string>
+    <string name="start_btn_txt">Начать игру!</string>
+    <string name="for_x_txt">Введи число!</string>
+    <string name="for1">от 1-10</string>
+    <string name="for2">от 1-25</string>
+    <string name="for3">от 1-50</string>
+    <string name="for4">от 1-100</string>
+    <string name="exit">Выход</string>
+    <string name="win">ПОБЕДА! ВЫ УГАДАЛИ ЧИСЛО!</string>
+    <string name="defeat">ВЫ НЕ УГАДАЛИ ЧИСЛО!</string>
+</resources>
