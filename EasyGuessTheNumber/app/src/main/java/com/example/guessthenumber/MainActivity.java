@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startBtn(View view) {
+        kolvo = 0;
         result_fld.setText("");
         randomNumber = validate(); // получаем рандомное число от компьютера в зависимости от выбранной сложности уровня!
         Toast.makeText(this, "Число загадано,\nигра началась...", Toast.LENGTH_SHORT).show();
