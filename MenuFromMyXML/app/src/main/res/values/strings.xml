@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MenuFromMyXML</string>
+    <string name="m1_txt">Add</string>
+    <string name="m2_txt">Edit</string>
+    <string name="m3_txt">Delete</string>
+    <string name="m4_txt">Copy</string>
+    <string name="m5_txt">Paste</string>
+    <string name="m6_txt">Exit</string>
+    <string name="m7_txt">Hello</string>
+    <string name="m8_txt">Goodbye</string>
+    <string name="m9_txt">Time</string>
+    <string name="m10_txt">Name</string>
+    <string name="main_txt">Показать расширенное меню</string>
+    <string name="check1_txt">Расширенное меню</string>
+    <string name="for_hide_txt">Скрыть меню</string>
+</resources>

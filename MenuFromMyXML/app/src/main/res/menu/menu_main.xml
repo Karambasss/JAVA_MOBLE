@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/groupMain">
+        <item
+            android:icon="@android:drawable/ic_menu_add"
+            android:id="@+id/item_add"
+            android:title="@string/m1_txt"
+            app:showAsAction="ifRoom" />
+        <item
+            android:icon="@android:drawable/ic_menu_edit"
+            android:id="@+id/item_edit"
+            android:title="@string/m2_txt"
+            app:showAsAction="ifRoom" />
+        <item
+            android:icon="@android:drawable/ic_menu_delete"
+            android:id="@+id/item_delete"
+            android:title="@string/m3_txt"
+            app:showAsAction="ifRoom" />
+    </group>
+    <group android:id="@+id/group1">
+        <item
+            android:id="@+id/my_item_copy"
+            android:orderInCategory="2"
+            android:title="@string/m4_txt" />
+        <item
+            android:id="@+id/my_item_paste"
+            android:orderInCategory="3"
+            android:title="@string/m5_txt" />
+        <item
+            android:id="@+id/my_item_exit"
+            android:orderInCategory="1"
+            android:title="@string/m6_txt" />
+        <item
+            android:id="@+id/my_item_hello"
+            android:orderInCategory="4"
+            android:title="@string/m7_txt" />
+        <item
+            android:id="@+id/my_item_goodbye"
+            android:orderInCategory="5"
+            android:title="@string/m8_txt" />
+        <item
+            android:id="@+id/my_item_time"
+            android:orderInCategory="6"
+            android:title="@string/m9_txt" />
+        <item
+            android:id="@+id/my_item_name"
+            android:orderInCategory="7"
+            android:title="@string/m10_txt" />
+    </group>
+</menu>
