@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/changeSize"
+        android:orderInCategory="2"
+        android:title="@string/context_menu2_textSize_txt" />
+    <item
+        android:id="@+id/changeColor"
+        android:orderInCategory="1"
+        android:title="@string/context_menu2_color_txt" />
+</menu>

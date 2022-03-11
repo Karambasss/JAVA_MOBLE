@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Списки Андроид</string>
+    <string name="btn_txt">Нажмите на кнопку</string>
+    <string name="label_txt">Начать</string>
+    <string name="label2_txt">нажал на кнопку!</string>
+    <string name="name_txt">Введите имя!</string>
+    <string name="error1">Вы передали пустое имя!</string>
+    <string name="msg1">Значение: </string>
+    <string name="pos_msg">Позиция элемента: </string>
+    <string name="ok_txt">ОК</string>
+    <string name="cancel_txt">ОТМЕНА</string>
+    <string name="clicked_txt">Нажата кнопка</string>
+    <string name="remove_dup_txt">Удалить дубликаты</string>
+    <string name="log_txt">Лог:</string>
+    <string name="log2_txt">Не выбрано ничего</string>
+    <string name="dialog_1_txt">Удаление</string>
+    <string name="dialog_2_txt">Вы уверены, что хотите удалить элемент?</string>
+    <string name="dialog_3_txt">Закрыть</string>
+    <string name="dialog_4_txt">Удалить</string>
+    <string name="context_menu_txt">Удалить элемент</string>
+    <string name="context_menu_delete_txt">Вы удалили элемент с именем: </string>
+    <string name="context_menu2_color_txt">Изменить цвет текста</string>
+    <string name="context_menu2_textSize_txt">Увеличить масштаб текста</string>
+    <string name="main_menu_exit_txt">Выход из приложения</string>
+</resources>
