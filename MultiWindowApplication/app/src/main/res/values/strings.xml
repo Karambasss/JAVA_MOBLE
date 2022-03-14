@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">MultiWindowApplication</string>
+    <string name="dialog_txt">Введите имя</string>
+    <string name="btn_txt">Создать!</string>
+    <string name="date_txt">Узнайте текущее время!</string>
+    <string name="switch_txt">Показать время</string>
+    <string name="label_txt">Введите пользователя!</string>
+    <string name="app_name2_txt">TodayTIME</string>
+    <string name="app_name3_txt">TodayDATE</string>
+    <string name="app_name1_txt">HelloUSER</string>
+    <string name="app_name4_txt">TodayINFO</string>
+    <string name="app2_info_txt">Текущее время:</string>
+    <string name="menu1_txt">Добавить пользователя</string>
+    <string name="menu2_txt">Узнать время</string>
+    <string name="menu3_txt">Узнать дату</string>
+    <string name="menu4_txt">Информация о пользователях</string>
+    <string name="error1_txt">Ошибка в добавлении пользователя</string>
+    <string name="menu_add_txt">Здраствуйте!</string>
+    <string name="app_date_info_txt">Узнайте текущую дату!</string>
+    <string name="app_date_info2_txt">Показать дату:</string>
+    <string name="app_date_info3_txt">Текущая дата:</string>
+    <string name="app_info_txt">Показать всю информацию:</string>
+    <string name="app_info_info1_txt">Сегодняшнее число:</string>
+    <string name="app_info_info2_txt">Текущее время:</string>
+</resources>

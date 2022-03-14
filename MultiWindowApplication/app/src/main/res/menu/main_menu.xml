@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_add_choice"
+        android:title="@string/menu1_txt" />
+    <item
+        android:id="@+id/menu_time_choice"
+        android:title="@string/menu2_txt" />
+    <item
+        android:id="@+id/menu_date_choice"
+        android:title="@string/menu3_txt" />
+    <item
+        android:id="@+id/menu_info_choice"
+        android:title="@string/menu4_txt" />
+</menu>
