@@ -10,8 +10,8 @@ public class Match {
     public String toString() {
         return "Match " +
                 venue +
+                " home_team: " + home_team + "; " +
                 "away_team: " + away_team + "; " +
-                " home_team: " + home_team +
                 ", stats: " + stats +
                 '\n';
     }

@@ -52,34 +52,11 @@ public class MainActivity extends AppCompatActivity {
         if (isNetwork(getApplicationContext())) {
 
             Toast.makeText(getApplicationContext(), "Интернет подключен", Toast.LENGTH_SHORT).show();
-
         }
         else {
-
             Toast.makeText(getApplicationContext(), "Интернет не подключен", Toast.LENGTH_SHORT).show();
         }
-//
-//        URL url = null;
-//        try {
-//            url = new URL("https://app.sportdataapi.com/api/v1/soccer/countries");
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        }
-//        URL finalUrl = url;
-//        Thread thread = new Thread(() -> {
-//            HttpURLConnection connection = ApiHelper.getConnection(finalUrl);
-//            if (connection != null) {
-//                try {
-//                    System.out.println("Hello!" + connection.getResponseCode());
-//                    System.out.println("Info = " + ApiHelper.getInfo(connection));
-//                } catch (IOException e) {
-//                    System.out.println("Errr!");
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
-//        thread.start();
-//
+
         //Отдельный поток создается, потому что нельзя в UI потоке создавать поток с обработкой данных из json
         Thread thread1 = new Thread(() ->{
             ArrayList<Country> countries = null;
@@ -94,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         thread1.start();
-
 
         Thread thread2 = new Thread(new Runnable() {
             @Override
@@ -174,8 +150,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.menuItem_english_matches:
+                intent = new Intent(MainActivity.this, EnglishActivity.class);
+                startActivity(intent);
                 break;
             case R.id.menuItem_live_matches:
+                intent = new Intent(MainActivity.this, LiveActivity.class);
+                startActivity(intent);
                 break;
         }
         return super.onOptionsItemSelected(item);

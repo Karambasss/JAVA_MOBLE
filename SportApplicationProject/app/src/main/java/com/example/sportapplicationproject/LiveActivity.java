@@ -2,6 +2,7 @@ package com.example.sportapplicationproject;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -9,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.sportapplicationproject.Controllers.ApiHelper;
 import com.example.sportapplicationproject.Entities.Match;
@@ -16,45 +18,50 @@ import com.example.sportapplicationproject.Entities.Match;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class RussianActivity extends AppCompatActivity {
-    ListView listView;
+public class LiveActivity extends AppCompatActivity {
+    ListView listViewLiveGames;
     ArrayAdapter<Match> arrayAdapter;
-    ArrayList<Match> russianMatches = new ArrayList<>();
+    ArrayList<Match> liveGames = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_russian);
-        listView = findViewById(R.id.listview);
-        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, russianMatches);
-        listView.setAdapter(arrayAdapter);
-        registerForContextMenu(listView);
+        setContentView(R.layout.activity_live);
+        listViewLiveGames = findViewById(R.id.listViewLiveGames);
+        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, liveGames);
+        listViewLiveGames.setAdapter(arrayAdapter);
+        registerForContextMenu(listViewLiveGames);
 
-        Thread thread2 = new Thread(new Runnable() {
+        Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                ArrayList<Match> russianTest = null;
+                ArrayList<Match> parsedLiveGames = null;
                 try {
-                    russianTest = ApiHelper.getRussianPremierLeagueGames();
-                    //System.out.println(russianTest);
+                    parsedLiveGames = ApiHelper.getLiveGames();
                 }
-                catch (IOException e){
+                catch (IOException e) {
                     e.printStackTrace();
                 }
-                updateUi(russianTest);
+                updateUi(parsedLiveGames);
             }
         });
-        thread2.start();
-
+        thread.start();
     }
-    public void updateUi(ArrayList<Match> matches){
+
+    public void updateUi(ArrayList<Match> match) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                russianMatches.addAll(matches);
-                arrayAdapter.notifyDataSetChanged();
+                if (match.size() != 0){
+                    liveGames.addAll(match);
+                    arrayAdapter.notifyDataSetChanged();
+                }
+                else {
+                    Toast.makeText(LiveActivity.this, "Матчи пока-что не проходят!", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
+
     //TODO создание контекстного меню и вызов новых элeментов контекстного меню посредством нажатия на элемент списка и проработать логику.
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
@@ -70,7 +77,7 @@ public class RussianActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_for_russian_premier_league, menu);
+        getMenuInflater().inflate(R.menu.menu_for_live_games, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -83,14 +90,11 @@ public class RussianActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.russianMenuItem_russian_standings:
-                System.out.println("TODO!");
+            case R.id.liveMenuItemRfplMatches:
+                System.out.println("TODO1!");
                 break;
-            case R.id.russianMenuItem_russian_top_scores:
+            case R.id.liveMenuItem_APL_Matches:
                 System.out.println("TODO2!");
-                break;
-            case R.id.russianMenuItem_russian_players:
-                System.out.println("TODO3!");
                 break;
         }
         return super.onOptionsItemSelected(item);

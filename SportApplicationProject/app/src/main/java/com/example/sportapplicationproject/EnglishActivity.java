@@ -2,6 +2,7 @@ package com.example.sportapplicationproject;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -16,45 +17,45 @@ import com.example.sportapplicationproject.Entities.Match;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class RussianActivity extends AppCompatActivity {
-    ListView listView;
+public class EnglishActivity extends AppCompatActivity {
+    ListView listviewAPL;
     ArrayAdapter<Match> arrayAdapter;
-    ArrayList<Match> russianMatches = new ArrayList<>();
+    ArrayList<Match> englishMatches = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_russian);
-        listView = findViewById(R.id.listview);
-        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, russianMatches);
-        listView.setAdapter(arrayAdapter);
-        registerForContextMenu(listView);
+        setContentView(R.layout.activity_english);
+        listviewAPL = findViewById(R.id.listviewAPL);
+        arrayAdapter = new ArrayAdapter<>(EnglishActivity.this, android.R.layout.simple_list_item_1, englishMatches);
+        listviewAPL.setAdapter(arrayAdapter);
+        registerForContextMenu(listviewAPL);
 
-        Thread thread2 = new Thread(new Runnable() {
+        Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                ArrayList<Match> russianTest = null;
+                ArrayList<Match> parsedEnglishMatches = null;
                 try {
-                    russianTest = ApiHelper.getRussianPremierLeagueGames();
-                    //System.out.println(russianTest);
+                    parsedEnglishMatches = ApiHelper.getEnglishPremierLeagueGames();
                 }
-                catch (IOException e){
+                catch (IOException e) {
                     e.printStackTrace();
                 }
-                updateUi(russianTest);
+                updateUi(parsedEnglishMatches);
             }
         });
-        thread2.start();
-
+        thread.start();
     }
+    //Вносим данные с Thread на UiThread
     public void updateUi(ArrayList<Match> matches){
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                russianMatches.addAll(matches);
+                englishMatches.addAll(matches);
                 arrayAdapter.notifyDataSetChanged();
             }
         });
     }
+
     //TODO создание контекстного меню и вызов новых элeментов контекстного меню посредством нажатия на элемент списка и проработать логику.
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
@@ -70,7 +71,7 @@ public class RussianActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_for_russian_premier_league, menu);
+        getMenuInflater().inflate(R.menu.menu_for_english_premier_league, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -83,13 +84,13 @@ public class RussianActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.russianMenuItem_russian_standings:
-                System.out.println("TODO!");
+            case R.id.englishMenuItem_english_standings:
+                System.out.println("TODO1!");
                 break;
-            case R.id.russianMenuItem_russian_top_scores:
+            case R.id.englishMenuItem_english_top_scores:
                 System.out.println("TODO2!");
                 break;
-            case R.id.russianMenuItem_russian_players:
+            case R.id.englishMenuItem_english_players:
                 System.out.println("TODO3!");
                 break;
         }

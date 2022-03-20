@@ -6,4 +6,12 @@
     <string name="main_menu_label_for_live_matches">Матчи в прямом эфире</string>
     <string name="switch_label_main_page">Показать подробную информацию</string>
     <string name="russian_matches_label">Футбольные матчи Российской Премьер Лиги</string>
+    <string name="main_menu_label_for_russian_standings">Турнирная таблица</string>
+    <string name="main_menu_label_for_russian_top_scores">Список бомбардиров</string>
+    <string name="main_menu_label_for_russian_players">Российские игроки</string>
+    <string name="english_matches_label">Футбольные матчи Английской Премьер Лиги</string>
+    <string name="main_menu_label_for_english_standings">Турнирная таблица</string>
+    <string name="main_menu_label_for_english_top_scores">Список бомбардиров</string>
+    <string name="main_menu_label_for_english_players">Английские игроки</string>
+    <string name="live_matches_label">Футбольные матчи в прямом эфире</string>
 </resources>

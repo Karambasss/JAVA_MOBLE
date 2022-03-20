@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/liveMenuItemRfplMatches"
+        android:title="@string/main_menu_label_for_russian_matches" />
+    <item
+        android:id="@+id/liveMenuItem_APL_Matches"
+        android:title="@string/main_menu_label_for_english_matches" />
+</menu>

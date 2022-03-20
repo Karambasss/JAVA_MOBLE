@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/russianMenuItem_russian_standings"
+        android:title="@string/main_menu_label_for_russian_standings" />
+    <item
+        android:id="@+id/russianMenuItem_russian_top_scores"
+        android:title="@string/main_menu_label_for_russian_top_scores" />
+    <item
+        android:id="@+id/russianMenuItem_russian_players"
+        android:title="@string/main_menu_label_for_russian_players" />
+</menu>

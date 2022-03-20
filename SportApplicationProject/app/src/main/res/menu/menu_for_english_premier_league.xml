@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/englishMenuItem_english_standings"
+        android:title="@string/main_menu_label_for_english_standings" />
+    <item
+        android:id="@+id/englishMenuItem_english_top_scores"
+        android:title="@string/main_menu_label_for_english_top_scores" />
+    <item
+        android:id="@+id/englishMenuItem_english_players"
+        android:title="@string/main_menu_label_for_english_players" />
+</menu>
