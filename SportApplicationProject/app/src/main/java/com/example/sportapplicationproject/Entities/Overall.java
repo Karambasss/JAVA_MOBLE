@@ -10,8 +10,7 @@ public class Overall {
 
     @Override
     public String toString() {
-        return "Overall= " +
-                "games_played=" + games_played +
+        return "games_played=" + games_played +
                 ", won=" + won +
                 ", draw=" + draw +
                 ", lost=" + lost +

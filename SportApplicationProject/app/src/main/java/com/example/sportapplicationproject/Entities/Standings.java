@@ -13,10 +13,10 @@ public class Standings {
         return "Standings = " +
                 "team_id=" + team_id +
                 ", team_name= " + team_name +
-                ", points='" + points +
-                ", status='" + status +
-                ", result='" + result +
-                ", overall=" + overall + '\n';
+                ", points= " + points +
+                ", status= " + status +
+                ", result= " + result +
+                ", overall= " + overall + '\n';
     }
     public void setTeam_name(String team_name) {
         this.team_name = team_name;

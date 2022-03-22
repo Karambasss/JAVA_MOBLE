@@ -213,4 +213,57 @@ public class ApiHelper{
         }
         return standings;
     }
+
+    public static HashMap<Long, String> getEnglishTeamForStandings() throws IOException {
+        HashMap<Long, String> map = new HashMap<>();
+        URL url = new URL(url_API + "teams?country_id=42");
+        HttpURLConnection httpURLConnection = getConnection(url);
+        if (httpURLConnection != null){
+            String response = getInfo(httpURLConnection);
+            httpURLConnection.disconnect();
+            JSONParser jsonParser = new JSONParser();
+            try {
+                JSONObject jsonObject = (JSONObject) jsonParser.parse(response);
+                JSONArray jsonArray = (JSONArray) jsonObject.get("data");
+                Gson gson = new Gson();
+                for (Object x: jsonArray) {
+                    TeamForStandings teamForStandings = gson.fromJson(x.toString(), TeamForStandings.class);
+                    map.put(teamForStandings.team_id, teamForStandings.name);
+                }
+            }
+            catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        return map;
+    }
+
+    public static ArrayList<Standings> getEnglishLeagueStandings(HashMap<Long, String> map) throws IOException {
+        ArrayList<Standings> standings = new ArrayList<>();
+        URL url = new URL(url_API + "standings?season_id=1980");
+        HttpURLConnection httpURLConnection = getConnection(url);
+        if (httpURLConnection != null){
+            String response = getInfo(httpURLConnection);
+            httpURLConnection.disconnect();
+            JSONParser jsonParser = new JSONParser();
+            try {
+                JSONObject jsonObject = (JSONObject) jsonParser.parse(response);
+                jsonObject = (JSONObject) jsonObject.get("data");
+                //System.out.println(jsonObject);
+                JSONArray standings1 = (JSONArray) jsonObject.get("standings");
+                //System.out.println(standings1);
+                Gson gson = new Gson();
+                for (Object x: standings1) {
+                    Standings leagueStandings = gson.fromJson(x.toString(), Standings.class);
+                    leagueStandings.setTeam_name(map.get(leagueStandings.team_id));
+                    //System.out.println(leagueStandings);
+                    standings.add(leagueStandings);
+                }
+            }
+            catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        return standings;
+    }
 }

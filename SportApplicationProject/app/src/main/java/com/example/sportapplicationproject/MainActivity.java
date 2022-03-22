@@ -56,67 +56,6 @@ public class MainActivity extends AppCompatActivity {
         else {
             Toast.makeText(getApplicationContext(), "Интернет не подключен", Toast.LENGTH_SHORT).show();
         }
-
-        //Отдельный поток создается, потому что нельзя в UI потоке создавать поток с обработкой данных из json
-//        Thread thread1 = new Thread(() ->{
-//            ArrayList<Country> countries = null;
-//            try {
-//                countries = ApiHelper.getAllCountries();
-//            }
-//            catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            for (Country c: countries) {
-//                System.out.println(c);
-//            }
-//        });
-//        thread1.start();
-//
-//        Thread thread2 = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                ArrayList<Match> russMatches = null;
-//                try {
-//                    russMatches = ApiHelper.getRussianPremierLeagueGames();
-//                }
-//                catch (IOException e){
-//                    e.printStackTrace();
-//                }
-//                System.out.println(russMatches);
-//            }
-//        });
-//        thread2.start();
-//
-//        Thread thread3 = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                ArrayList<Match> engMatches = null;
-//                try {
-//                    engMatches = ApiHelper.getEnglishPremierLeagueGames();
-//                }
-//                catch (IOException e){
-//                    e.printStackTrace();
-//                }
-//                System.out.println(engMatches);
-//            }
-//        });
-//        thread3.start();
-//
-//        Thread thread4 = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                ArrayList<Match> liveMatches = null;
-//                try {
-//                    liveMatches = ApiHelper.getLiveGames();
-//                }
-//                catch (IOException e){
-//                    e.printStackTrace();
-//                }
-//                System.out.println("-------------------");
-//                System.out.println(liveMatches);
-//            }
-//        });
-//        thread4.start();
     }
 
     public boolean isNetwork(Context context) {

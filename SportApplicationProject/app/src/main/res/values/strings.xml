@@ -15,4 +15,5 @@
     <string name="main_menu_label_for_english_players">Английские игроки</string>
     <string name="live_matches_label">Футбольные матчи в прямом эфире</string>
     <string name="russian_standings_label">Турнирная таблица РФПЛ</string>
+    <string name="english_standings_label">Турнирная таблица АПЛ</string>
 </resources>
