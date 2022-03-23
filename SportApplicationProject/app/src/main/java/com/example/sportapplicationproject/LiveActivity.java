@@ -3,6 +3,7 @@ package com.example.sportapplicationproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -85,16 +86,18 @@ public class LiveActivity extends AppCompatActivity {
     public boolean onPrepareOptionsMenu(Menu menu) {
         return super.onPrepareOptionsMenu(menu);
     }
-
-    //TODO создание, вызов новых activity посредством нажатия на элемент меню.
+    
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent;
         switch (item.getItemId()){
             case R.id.liveMenuItemRfplMatches:
-                System.out.println("TODO1!");
+                intent = new Intent(LiveActivity.this, RussianActivity.class);
+                startActivity(intent);
                 break;
             case R.id.liveMenuItem_APL_Matches:
-                System.out.println("TODO2!");
+                intent = new Intent(LiveActivity.this, EnglishActivity.class);
+                startActivity(intent);
                 break;
         }
         return super.onOptionsItemSelected(item);
