@@ -91,7 +91,8 @@ public class RussianActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.russianMenuItem_russian_top_scores:
-                System.out.println("TODO2!");
+                intent = new Intent(RussianActivity.this, RussianTopScoresActivity.class);
+                startActivity(intent);
                 break;
             case R.id.russianMenuItem_russian_players:
                 intent = new Intent(RussianActivity.this, RussianPlayersActivity.class);

@@ -5,6 +5,7 @@ import com.example.sportapplicationproject.Entities.Match;
 import com.example.sportapplicationproject.Entities.Players;
 import com.example.sportapplicationproject.Entities.Standings;
 import com.example.sportapplicationproject.Entities.TeamForStandings;
+import com.example.sportapplicationproject.Entities.TopScores;
 import com.google.gson.Gson;
 
 import org.json.simple.JSONArray;
@@ -289,5 +290,28 @@ public class ApiHelper{
             }
         }
         return players;
+    }
+    public static ArrayList<TopScores> getRussianTopScoresPlayers() throws IOException {
+        ArrayList<TopScores> topPlayers = new ArrayList<>();
+        URL url = new URL(url_API + "topscorers?season_id=1982");
+        HttpURLConnection httpURLConnection = getConnection(url);
+        if (httpURLConnection != null){
+            String response = getInfo(httpURLConnection);
+            httpURLConnection.disconnect();
+            JSONParser jsonParser = new JSONParser();
+            try {
+                JSONObject jsonObject = (JSONObject) jsonParser.parse(response);
+                JSONArray jsonArray = (JSONArray) jsonObject.get("data");
+                Gson gson = new Gson();
+                for (Object x: jsonArray) {
+                    TopScores topPlayer = gson.fromJson(x.toString(), TopScores.class);
+                    topPlayers.add(topPlayer);
+                }
+            }
+            catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        return topPlayers;
     }
 }
