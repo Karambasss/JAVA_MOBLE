@@ -6,6 +6,6 @@ public class Country {
     public Long country_id;
 
     public String toString(){
-        return continent + "," + name + "," + country_id + "\n";
+        return name;
     }
 }

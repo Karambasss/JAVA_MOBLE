@@ -16,4 +16,5 @@
     <string name="live_matches_label">Футбольные матчи в прямом эфире</string>
     <string name="russian_standings_label">Турнирная таблица РФПЛ</string>
     <string name="english_standings_label">Турнирная таблица АПЛ</string>
+    <string name="russian_players_label">Российские футболисты</string>
 </resources>

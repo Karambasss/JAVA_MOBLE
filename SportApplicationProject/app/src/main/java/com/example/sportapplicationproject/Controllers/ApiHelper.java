@@ -2,6 +2,7 @@ package com.example.sportapplicationproject.Controllers;
 
 import com.example.sportapplicationproject.Entities.Country;
 import com.example.sportapplicationproject.Entities.Match;
+import com.example.sportapplicationproject.Entities.Players;
 import com.example.sportapplicationproject.Entities.Standings;
 import com.example.sportapplicationproject.Entities.TeamForStandings;
 import com.google.gson.Gson;
@@ -94,7 +95,7 @@ public class ApiHelper{
             try {
                 JSONObject jsonObject = (JSONObject) jsonParser.parse(response);
                 JSONArray jsonElements = (JSONArray) jsonObject.get("data");
-                //System.out.println(jsonElements);
+                System.out.println(jsonElements);
                 //System.out.println(jsonElements.get(2));
                 Gson gson = new Gson();
                 for (Object d: jsonElements) {
@@ -265,5 +266,28 @@ public class ApiHelper{
             }
         }
         return standings;
+    }
+    public static ArrayList<Players> getRussianPlayers() throws IOException {
+        ArrayList<Players> players = new ArrayList<>();
+        URL url = new URL(url_API + "players?country_id=102");
+        HttpURLConnection httpURLConnection = getConnection(url);
+        if (httpURLConnection != null){
+            String response = getInfo(httpURLConnection);
+            httpURLConnection.disconnect();
+            JSONParser jsonParser = new JSONParser();
+            try {
+                JSONObject jsonObject = (JSONObject) jsonParser.parse(response);
+                JSONArray jsonArray = (JSONArray) jsonObject.get("data");
+                Gson gson = new Gson();
+                for (Object x: jsonArray) {
+                    Players player = gson.fromJson(x.toString(), Players.class);
+                    players.add(player);
+                }
+            }
+            catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        return players;
     }
 }

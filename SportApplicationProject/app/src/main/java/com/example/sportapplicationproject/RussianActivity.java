@@ -94,7 +94,8 @@ public class RussianActivity extends AppCompatActivity {
                 System.out.println("TODO2!");
                 break;
             case R.id.russianMenuItem_russian_players:
-                System.out.println("TODO3!");
+                intent = new Intent(RussianActivity.this, RussianPlayersActivity.class);
+                startActivity(intent);
                 break;
         }
         return super.onOptionsItemSelected(item);
