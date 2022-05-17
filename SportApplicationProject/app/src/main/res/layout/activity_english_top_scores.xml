@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RussianTopScoresActivity"
+    tools:context=".EnglishTopScoresActivity"
     android:background="#F5DEB3">
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/audiowide"
-        android:text="@string/russian_top_scores_label"
+        android:text="@string/english_top_scores_label"
         android:textAlignment="center"
         android:textSize="17sp"
         android:textStyle="bold|italic"
@@ -29,4 +29,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

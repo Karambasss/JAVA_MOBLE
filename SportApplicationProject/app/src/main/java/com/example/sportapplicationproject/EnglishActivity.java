@@ -91,10 +91,12 @@ public class EnglishActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.englishMenuItem_english_top_scores:
-                System.out.println("TODO2!");
+                intent = new Intent(EnglishActivity.this, EnglishTopScoresActivity.class);
+                startActivity(intent);
                 break;
             case R.id.englishMenuItem_english_players:
-                System.out.println("TODO3!");
+                intent = new Intent(EnglishActivity.this, EnglishPlayersActivity.class);
+                startActivity(intent);
                 break;
         }
         return super.onOptionsItemSelected(item);

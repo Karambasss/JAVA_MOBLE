@@ -24,7 +24,7 @@ import java.util.HashMap;
 
 public class ApiHelper{
     private static final String url_API = "https://app.sportdataapi.com/api/v1/soccer/";
-    private static final String key_APi = "b18d9120-a11e-11ec-b0a2-5bc94415f5cf";
+    private static final String key_APi = "215bac30-d47d-11ec-b613-43d5d82e0910";
 
     public static HttpURLConnection getConnection(URL url){
         HttpURLConnection http = null;
@@ -294,6 +294,52 @@ public class ApiHelper{
     public static ArrayList<TopScores> getRussianTopScoresPlayers() throws IOException {
         ArrayList<TopScores> topPlayers = new ArrayList<>();
         URL url = new URL(url_API + "topscorers?season_id=1982");
+        HttpURLConnection httpURLConnection = getConnection(url);
+        if (httpURLConnection != null){
+            String response = getInfo(httpURLConnection);
+            httpURLConnection.disconnect();
+            JSONParser jsonParser = new JSONParser();
+            try {
+                JSONObject jsonObject = (JSONObject) jsonParser.parse(response);
+                JSONArray jsonArray = (JSONArray) jsonObject.get("data");
+                Gson gson = new Gson();
+                for (Object x: jsonArray) {
+                    TopScores topPlayer = gson.fromJson(x.toString(), TopScores.class);
+                    topPlayers.add(topPlayer);
+                }
+            }
+            catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        return topPlayers;
+    }
+    public static ArrayList<Players> getEnglishPlayers() throws IOException{
+        ArrayList<Players> players = new ArrayList<>();
+        URL url = new URL(url_API + "players?country_id=42");
+        HttpURLConnection httpURLConnection = getConnection(url);
+        if (httpURLConnection != null){
+            String response = getInfo(httpURLConnection);
+            httpURLConnection.disconnect();
+            JSONParser jsonParser = new JSONParser();
+            try {
+                JSONObject jsonObject = (JSONObject) jsonParser.parse(response);
+                JSONArray jsonArray = (JSONArray) jsonObject.get("data");
+                Gson gson = new Gson();
+                for (Object x: jsonArray) {
+                    Players player = gson.fromJson(x.toString(), Players.class);
+                    players.add(player);
+                }
+            }
+            catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        return players;
+    }
+    public static ArrayList<TopScores> getEnglishTopScoresPlayers() throws IOException {
+        ArrayList<TopScores> topPlayers = new ArrayList<>();
+        URL url = new URL(url_API + "topscorers?season_id=1980");
         HttpURLConnection httpURLConnection = getConnection(url);
         if (httpURLConnection != null){
             String response = getInfo(httpURLConnection);

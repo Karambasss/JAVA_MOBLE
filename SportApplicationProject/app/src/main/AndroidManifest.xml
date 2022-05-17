@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SportApplicationProject">
         <activity
+            android:name=".EnglishTopScoresActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EnglishPlayersActivity"
+            android:exported="false" />
+        <activity
             android:name=".RussianTopScoresActivity"
             android:exported="false" />
         <activity

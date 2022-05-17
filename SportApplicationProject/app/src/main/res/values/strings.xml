@@ -18,4 +18,6 @@
     <string name="english_standings_label">Турнирная таблица АПЛ</string>
     <string name="russian_players_label">Российские футболисты</string>
     <string name="russian_top_scores_label">Бомбардиры РФПЛ</string>
+    <string name="english_players_label">Английские футболисты</string>
+    <string name="english_top_scores_label">Бомбардиры АПЛ</string>
 </resources>

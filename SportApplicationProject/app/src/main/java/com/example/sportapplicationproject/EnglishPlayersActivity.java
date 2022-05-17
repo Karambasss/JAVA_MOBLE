@@ -7,44 +7,42 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.sportapplicationproject.Controllers.ApiHelper;
-import com.example.sportapplicationproject.Entities.TopScores;
+import com.example.sportapplicationproject.Entities.Players;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class RussianTopScoresActivity extends AppCompatActivity {
-    ListView listViewRussianTopScores;
-    ArrayAdapter<TopScores> arrayAdapter;
-    ArrayList<TopScores> russianTopScoresList = new ArrayList<>();
+public class EnglishPlayersActivity extends AppCompatActivity {
+    ListView listViewEnglishPlayers;
+    ArrayAdapter<Players> arrayAdapter;
+    ArrayList<Players> playersList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_russian_top_scores);
-        listViewRussianTopScores = findViewById(R.id.listViewEnglishTopScores);
-        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, russianTopScoresList);
-        listViewRussianTopScores.setAdapter(arrayAdapter);
-
+        setContentView(R.layout.activity_english_players);
+        listViewEnglishPlayers = findViewById(R.id.listViewEnglishPlayers);
+        arrayAdapter = new ArrayAdapter<>(EnglishPlayersActivity.this, android.R.layout.simple_list_item_1, playersList);
+        listViewEnglishPlayers.setAdapter(arrayAdapter);
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                ArrayList<TopScores> topScores = null;
+                ArrayList<Players> players = null;
                 try {
-                    topScores = ApiHelper.getRussianTopScoresPlayers();
+                    players = ApiHelper.getEnglishPlayers();
                 }
                 catch (IOException e) {
                     e.printStackTrace();
                 }
-                updateUi(topScores);
+                updateUi(players);
             }
         });
         thread.start();
     }
-
-    public void updateUi(ArrayList<TopScores> resultList){
+    public void updateUi(ArrayList<Players> players){
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                russianTopScoresList.addAll(resultList);
+                playersList.addAll(players);
                 arrayAdapter.notifyDataSetChanged();
             }
         });

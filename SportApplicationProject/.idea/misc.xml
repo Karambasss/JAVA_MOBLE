@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mpapa/AndroidStudioProjects/SportApplicationProject/app/src/main/res/font/audiowide.xml" value="0.284375" />
         <entry key="..\:/Users/mpapa/AndroidStudioProjects/SportApplicationProject/app/src/main/res/layout/activity_english.xml" value="0.264" />
+        <entry key="..\:/Users/mpapa/AndroidStudioProjects/SportApplicationProject/app/src/main/res/layout/activity_english_players.xml" value="0.264" />
         <entry key="..\:/Users/mpapa/AndroidStudioProjects/SportApplicationProject/app/src/main/res/layout/activity_english_standings.xml" value="0.264" />
+        <entry key="..\:/Users/mpapa/AndroidStudioProjects/SportApplicationProject/app/src/main/res/layout/activity_english_top_scores.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mpapa/AndroidStudioProjects/SportApplicationProject/app/src/main/res/layout/activity_live.xml" value="0.264" />
         <entry key="..\:/Users/mpapa/AndroidStudioProjects/SportApplicationProject/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/mpapa/AndroidStudioProjects/SportApplicationProject/app/src/main/res/layout/activity_russian.xml" value="0.264" />
